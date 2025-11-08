@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synara AI - Project Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .overview {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .mvp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .mvp-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .mvp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .mvp-card h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mvp-card .icon {
+            font-size: 1.8em;
+        }
+
+        .mvp-card .core-feature {
+            background: #f0f4ff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .mvp-card .technology,
+        .mvp-card .capabilities {
+            margin-top: 15px;
+        }
+
+        .mvp-card .tech-title,
+        .mvp-card .cap-title {
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .mvp-card ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .mvp-card li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9em;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-list {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .feature-list h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .feature-list ul {
+            margin-left: 25px;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fff9c4 0%, #ffeb3b 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .mvp-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Synara AI</h1>
+            <div class="subtitle">AI Girlfriend & Personal Assistant - Complete Project Documentation</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>📋 Project Overview</h2>
+                <div class="overview">
+                    <strong>Synara AI</strong> is a sophisticated, interactive web application featuring an AI girlfriend and personal assistant named Synara. The application focuses on creating a <span class="highlight">personal and emotional connection</span> through real-time voice conversations, a highly expressive avatar, and persistent memory. It leverages the latest <strong>Google Gemini APIs</strong> to provide a rich, multi-modal experience combining voice, text, and live video.
+                </div>
+
+                <div class="tech-stack">
+                    <div class="tech-badge">Google Gemini Live API</div>
+                    <div class="tech-badge">WebRTC</div>
+                    <div class="tech-badge">Progressive Web App</div>
+                    <div class="tech-badge">SVG Animation</div>
+                    <div class="tech-badge">Service Workers</div>
+                    <div class="tech-badge">Function Calling</div>
+                    <div class="tech-badge">Google Search Integration</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 MVP Features & Key Points</h2>
+
+                <div class="mvp-grid">
+                    <!-- Feature 1 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">🎙️</span>Real-time Voice Conversation</h3>
+                        <div class="core-feature">Core Feature: Natural spoken conversations with low latency</div>
+                        <div class="technology">
+                            <div class="tech-title">Technology:</div>
+                            • Gemini Live API for streaming audio I/O<br>
+                            • Real-time bidirectional communication<br>
+                            • Live transcription of conversations
+                        </div>
+                        <div class="capabilities">
+                            <div class="cap-title">UI Feedback:</div>
+                            • Connection status indicators<br>
+                            • Live speech transcriptions<br>
+                            • Real-time response display
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">💫</span>Dynamic Avatar System</h3>
+                        <div class="core-feature">Core Feature: Expressive anime-style avatar with emotions</div>
+                        <div class="technology">
+                            <div class="tech-title">Expressions:</div>
+                            • Happy, Sad, Surprised, Thinking<br>
+                            • Context-aware emotion changes<br>
+                            • Breathing & head-bob animations<br>
+                            • Eye-tracking mouse cursor
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">🎨</span>Multi-modal Inputs</h3>
+                        <div class="core-feature">Core Feature: Voice, text, image, and live video interactions</div>
+                        <div class="capabilities">
+                            <div class="cap-title">Input Methods:</div>
+                            <ul>
+                                <li><strong>Text Chat:</strong> Type messages</li>
+                                <li><strong>Image Upload:</strong> Share and discuss images</li>
+                                <li><strong>Vision Mode:</strong> Live camera streaming</li>
+                                <li><strong>Voice:</strong> Spoken conversations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">🧠</span>Personalization & Memory</h3>
+                        <div class="core-feature">Core Feature: Long-term memory and customizable personality</div>
+                        <div class="capabilities">
+                            <div class="cap-title">Capabilities:</div>
+                            <ul>
+                                <li>Save key facts about users</li>
+                                <li>Recall information in conversations</li>
+                                <li>Mood settings (Playful, Calm, Professional)</li>
+                                <li>Voice customization</li>
+                                <li>Memory management interface</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">🛠️</span>Personal Assistant Tools</h3>
+                        <div class="core-feature">Core Feature: Function calling for real-world actions</div>
+                        <div class="feature-list">
+                            <h4>Tool Categories:</h4>
+                            <ul>
+                                <li><strong>Media:</strong> Play/stop music</li>
+                                <li><strong>Productivity:</strong> Reminders, time, clipboard</li>
+                                <li><strong>Device:</strong> Open apps (Spotify, YouTube)</li>
+                                <li><strong>Communication:</strong> Initiate calls</li>
+                                <li><strong>Development:</strong> Generate formatted code</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">🌐</span>Web-Connected Intelligence</h3>
+                        <div class="core-feature">Core Feature: Real-time information with Google Search</div>
+                        <div class="capabilities">
+                            <div class="cap-title">Features:</div>
+                            • Grounded responses with web data<br>
+                            • Current news and events<br>
+                            • Source citations<br>
+                            • Fact verification
+                        </div>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">✨</span>Polished User Experience</h3>
+                        <div class="core-feature">Core Feature: App-like interface with PWA capabilities</div>
+                        <div class="feature-list">
+                            <ul>
+                                <li>Cinematic intro animation</li>
+                                <li>Modern, responsive UI</li>
+                                <li>Smooth animations</li>
+                                <li>Elegant notification system</li>
+                                <li>Offline capability (PWA)</li>
+                                <li>Auto-reconnect on tab focus</li>
+                                <li>Camera permission handling</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 8 -->
+                    <div class="mvp-card">
+                        <h3><span class="icon">🔧</span>Technical Architecture</h3>
+                        <div class="core-feature">Core Feature: Robust, modern web architecture</div>
+                        <div class="feature-list">
+                            <ul>
+                                <li>Service Worker for offline support</li>
+                                <li>WebRTC for camera streaming</li>
+                                <li>SVG-based avatar rendering</li>
+                                <li>Persistent localStorage</li>
+                                <li>Error handling & recovery</li>
+                                <li>Cross-browser compatibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📝 MVP Summary for Your Dictionary</h2>
+                <div class="feature-list">
+                    <h4>Key MVP Points to Note:</h4>
+                    <ul>
+                        <li><strong>1. Real-time AI Conversation:</strong> Low-latency voice chat using Gemini Live API with live transcription</li>
+                        <li><strong>2. Expressive Avatar:</strong> Dynamic, emotion-aware anime character with mouse-tracking eyes and animations</li>
+                        <li><strong>3. Multi-modal AI:</strong> Supports voice, text, image, and live video (vision mode) inputs</li>
+                        <li><strong>4. Persistent Memory:</strong> Saves and recalls user information for personalized conversations</li>
+                        <li><strong>5. Function Calling:</strong> Real assistant capabilities (music, reminders, web apps, code generation)</li>
+                        <li><strong>6. Web Grounding:</strong> Connected to Google Search for current information with source citing</li>
+                        <li><strong>7. PWA Architecture:</strong> Offline-capable, app-like experience with service workers</li>
+                        <li><strong>8. Customization:</strong> Adjustable personality moods, voice selection, and appearance</li>
+                        <li><strong>9. Professional UI/UX:</strong> Cinematic intro, smooth animations, modern design patterns</li>
+                        <li><strong>10. Robust Engineering:</strong> Error handling, auto-reconnect, permission management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎬 User Experience Flow</h2>
+                <div class="overview">
+                    <strong>1. Entry:</strong> Cinematic "SURAJ CREATION" intro animation<br><br>
+                    <strong>2. Main Interface:</strong> Avatar with mood-based expressions, chat interface, control buttons<br><br>
+                    <strong>3. Interaction Methods:</strong> Press mic for voice, type text, upload images, activate camera for vision<br><br>
+                    <strong>4. AI Response:</strong> Synara responds with voice + text, avatar expression changes, actions executed<br><br>
+                    <strong>5. Personalization:</strong> Settings panel for voice, mood, memory management<br><br>
+                    <strong>6. Offline Support:</strong> Core functionality works without internet via service worker
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Synara AI</strong> - A Next-Generation Conversational AI Experience<br>
+            Created by SURAJ CREATION
+        </div>
+    </div>
+</body>
+</html>
